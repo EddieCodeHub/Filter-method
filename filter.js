@@ -75,3 +75,40 @@ console.log(candidates); // mark and jason logged as they have strong skills in 
 // use map method to only return candidates names
 const names = candidates.map(candidate => candidate.name);
 console.log(names); // [ 'Mark', 'Jason' ]
+
+
+// challange
+let students2 = [
+  {
+      name: 'John',
+      subjects: ['maths', 'english', 'cad'],
+      teacher: {maths: 'Harry', english: 'Joan', cad: 'Paul'},
+      results: {maths: 90, english: 75, cad: 87},
+  },
+  {
+      name: 'Emily',
+      subjects: ['science', 'english', 'art'],
+      teacher: {science: 'Iris', english: 'Joan', art: 'Simon'},
+      results: {science: 93, english: 80, art: 95},
+  },
+  {
+      name: 'Adam',
+      subjects: ['science', 'maths', 'art'],
+      teacher: {science: 'Iris', maths: 'Harry', art: 'Simon'},
+      results: {science: 84, maths: 97, art: 95},
+  },
+  {
+      name: 'Fran',
+      subjects: ['science', 'english', 'art'],
+      teacher: {science: 'Iris', english: 'Joan', art: 'Simon'},
+      results: {science: 67, english: 87, art: 95},
+  }
+];
+
+// filter students with math grades
+const topMaths = students.filter(student => student.results.maths)
+console.log(topMaths) // logs adam and johns fulll objects as they have maths grades
+
+// filter names from objects
+const topMathsNames = topMaths.map(student => student.name)
+console.log(topMathsNames) // logs ['John', 'Adam'] removed from objects and only names are logged
