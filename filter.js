@@ -21,6 +21,12 @@ const people = [
   },
 ];
 
+const oldEnogh = people.filter(person => person.age >= 21);
+console.log(oldEnough); // [{ name: 'Michael', age: 23 }]
+
+const paul = people.filter(person => person.name === 'Paul')[0]; // [0] is used to get the object from the array
+console.log(paul); // [ name: 'Paul', age: 18 ] 
+
 
 // Complex Filtering
 const students = [
@@ -55,3 +61,17 @@ const students = [
     ]
   },
 ];
+
+
+const has5yearsExp = skill => skill.yrsEperience >= 5;
+const hasStrongSkills = student => {
+  let strongSkills = student.skills.filter(has5yearsExp)
+  return strongSkills.length > 0;
+}
+const candidates = students.filter(hasStrongSkills)
+
+console.log(candidates); // mark and jason logged as they have strong skills in html and css respectively
+
+// use map method to only return candidates names
+const names = candidates.map(candidate => candidate.name);
+console.log(names); // [ 'Mark', 'Jason' ]
